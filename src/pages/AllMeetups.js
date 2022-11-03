@@ -24,7 +24,7 @@ function AllMeetupsPage() {
         for (const meetupId in data) {
           const meetup = {
             id: meetupId,
-            ...data[meetupId]
+            ...data[meetupId],
           };
           meetups.push(meetup);
         }
@@ -51,4 +51,3 @@ function AllMeetupsPage() {
 }
 
 export default AllMeetupsPage;
-

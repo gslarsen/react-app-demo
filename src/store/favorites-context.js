@@ -3,15 +3,14 @@ import { createContext, useState } from "react";
 const FavoritesContext = createContext({
   favorites: [],
   totalFavorites: 0,
-  // the following functions only serve to have vs code autocomplete functionality
-  // addFavorite: (favoriteMeetup) => {},
-  // removeFavorite: (meetupId) => {},
-  // itemIsFavorite: (meetupId) => {},
+  addFavorite: (favoriteMeetup) => {},
+  removeFavorite: (meetupId) => {},
+  itemIsFavorite: (meetupId) => {},
 });
 
 export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState([]);
-  
+
   function addFavoriteHandler(favoriteMeetup) {
     // to ensure react has latest value, pass fn as below
     setUserFavorites((prevUserFavorites) => {
