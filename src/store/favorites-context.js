@@ -4,14 +4,14 @@ const FavoritesContext = createContext({
   favorites: [],
   totalFavorites: 0,
   // the following functions only serve to have vs code autocomplete functionality
-  addFavorite: (favoriteMeetup) => {},
-  removeFavorite: (meetupId) => {},
-  itemIsFavorite: (meetupId) => {}
+  // addFavorite: (favoriteMeetup) => {},
+  // removeFavorite: (meetupId) => {},
+  // itemIsFavorite: (meetupId) => {},
 });
 
 export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState([]);
-
+  
   function addFavoriteHandler(favoriteMeetup) {
     // to ensure react has latest value, pass fn as below
     setUserFavorites((prevUserFavorites) => {
@@ -34,7 +34,7 @@ export function FavoritesContextProvider(props) {
     totalFavorites: userFavorites.length,
     addFavorite: addFavoriteHandler,
     removeFavorite: removeFavoriteHandler,
-    itemIsFavorite: itemIsFavoriteHandler
+    itemIsFavorite: itemIsFavoriteHandler,
   };
   // Provider is a component that's built-in; whenever the value attribute changes, all components listening to our context will be updated
   return (
@@ -44,4 +44,4 @@ export function FavoritesContextProvider(props) {
   );
 }
 
-export default FavoritesContext; 
+export default FavoritesContext;

@@ -5,6 +5,10 @@ import MeetupList from "../components/meetups/MeetupList";
 function AllMeetupsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
+  // Use localStorage.setObj(key, value) to save an array or object
+  Storage.prototype.setObj = function (key, obj) {
+    return this.setItem(key, JSON.stringify(obj));
+  };
 
   useEffect(() => {
     setIsLoading(true);
