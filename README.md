@@ -1,1 +1,1 @@
-A react meetup app with frequently used functionality. 
+A react meetup app with frequently used functionality for demo purposes. 
